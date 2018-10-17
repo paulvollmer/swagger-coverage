@@ -13,7 +13,9 @@
     "pretest": "node_modules/.bin/standard",
     "test": "npm run test-src && npm run test-cli",
     "test-src": "node_modules/.bin/_mocha test/*.test.js",
-    "test-cli": "node main.js -s ./test/fixtures/swagger.json -t ./test/fixtures/testcode -c 5"
+    "test-cli": "node main.js -s ./test/fixtures/swagger.json -t ./test/fixtures/testcode -c 5",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,8 @@
     "standard": "^10.0.2"
   },
   "dependencies": {
-    "swagger-walk": "paulvollmer/swagger-walk#v0.1.0"
-  }
+    "swagger-walk": "paulvollmer/swagger-walk#v0.1.0",
+    "snyk": "^1.104.1"
+  },
+  "snyk": true
 }
